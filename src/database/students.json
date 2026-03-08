@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Test",
+    "age": 20,
+    "ville": "Paris",
+    "filiere": "Info",
+    "notes": []
+  },
+  {
+    "id": 2,
+    "name": "",
+    "age": 18,
+    "ville": "",
+    "filiere": "",
+    "notes": []
+  },
+  {
+    "id": 3,
+    "name": "",
+    "age": 18,
+    "ville": "",
+    "filiere": "",
+    "notes": []
+  }
+]
