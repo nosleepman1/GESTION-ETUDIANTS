@@ -1,4 +1,4 @@
-from .student import displayStudent
+from .display import displayStudent
 
 
 def searchByName(STUDENTS):

@@ -1,6 +1,8 @@
 
 
 def SearchView():
+    from ..utils.utils import clearScreen
+    clearScreen()
     print("=== Rechercher un étudiant ===")
     print("1. Par nom")
     print("2. Par ville")
