@@ -9,18 +9,34 @@
   },
   {
     "id": 2,
-    "name": "",
+    "name": "Abdallah",
     "age": 18,
-    "ville": "",
-    "filiere": "",
+    "ville": "Tunis",
+    "filiere": "Math",
     "notes": []
   },
   {
     "id": 3,
-    "name": "",
+    "name": "Alice",
+    "age": 19,
+    "ville": "Sousse",
+    "filiere": "Physique",
+    "notes": []
+  },
+  {
+    "id": 4,
+    "name": "Bob",
     "age": 18,
-    "ville": "",
-    "filiere": "",
+    "ville": "Sousse",
+    "filiere": "Info",
+    "notes": []
+  },
+  {
+    "id": 5,
+    "name": "MBAYE Sk",
+    "age": 19,
+    "ville": "DAKAR",
+    "filiere": "GL",
     "notes": []
   }
 ]

@@ -9,7 +9,7 @@ def validate_name(name):
         for char in name:
             if not (char.isalpha() or char.isspace()):
                 return False, "Le nom ne peut contenir que des lettres et des espaces"
-        return True, ""
+        return True, name
     except:
         return False, "Erreur de validation du nom"
 
@@ -43,7 +43,7 @@ def validate_ville(ville):
             if not (char.isalpha() or char.isspace()):
                 return False, "La ville ne peut contenir que des lettres et des espaces"      
             
-        return True, ""
+        return True, ville
    
     except:
         return False, "Erreur de validation de la ville"
@@ -61,7 +61,7 @@ def validate_filiere(filiere):
             if not (char.isalpha() or char.isspace()):
                 return False, "La filière ne peut contenir que des lettres et des espaces"
             
-        return True, ""
+        return True, filiere
     except:
         return False, "Erreur de validation de la filière"
 
