@@ -4,7 +4,6 @@ from ..middlewares.validation import get_validated_input, validate_name, validat
 from ..middlewares.file_operations import save_students_to_json
 
 
-
 def createStudent(STUDENTS):
     clearScreen()
 
@@ -61,4 +60,70 @@ def createStudent(STUDENTS):
     pause()
 
 
+def editStudent(STUDENTS):
+    clearScreen()
 
+    print("=== MODIFIER UN ETUDIANT ===")
+    print()
+
+    student = searchById(STUDENTS)
+    if student is None:
+        print("Etudiant non trouve.")
+        pause()
+        return
+
+    name = get_validated_input("Nouveau nom: ", validate_name)
+    while name is None:
+        print("Le nom est requis.")
+        name = get_validated_input("Nouveau nom: ", validate_name)
+
+    age = get_validated_input("Nouvel age: ", validate_age)
+    while age is None:
+        print("L'age est requis.")
+        age = get_validated_input("Nouvel age: ", validate_age)
+
+    ville = get_validated_input("Nouvelle ville: ", validate_ville)
+    while ville is None:
+        print("La ville est requise.")
+        ville = get_validated_input("Nouvelle ville: ", validate_ville)
+
+    filiere = get_validated_input("Nouvelle filiere: ", validate_filiere)
+    while filiere is None:
+        print("La filiere est requise.")
+        filiere = get_validated_input("Nouvelle filiere: ", validate_filiere)
+
+    student['name'] = name
+    student['age'] = age
+    student['ville'] = ville
+    student['filiere'] = filiere
+
+    success = save_students_to_json(STUDENTS)
+    if success:
+        print(f"\nEtudiant {name} modifie avec succes!")
+    else:
+        print(f"\nErreur lors de la modification de l'etudiant {name}.")
+
+    pause()
+
+   
+def deleteStudent(STUDENTS):
+    clearScreen()
+
+    print("=== SUPPRIMER UN ETUDIANT ===")
+    print()
+
+    student = searchById(STUDENTS)
+    if student is None:
+        print("Etudiant non trouve.")
+        pause()
+        return
+
+    STUDENTS.remove(student)
+
+    success = save_students_to_json(STUDENTS)
+    if success:
+        print(f"\nEtudiant {student['name']} supprime avec succes!")
+    else:
+        print(f"\nErreur lors de la suppression de l'etudiant {student['name']}.")
+
+    pause()
