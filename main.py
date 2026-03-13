@@ -26,46 +26,30 @@ while True:
         case 3:
             while True:
                 search_choice = SearchView()
-<<<<<<< HEAD
-=======
-                if search_choice == 4:
-                    break
->>>>>>> main
                 match search_choice:
                     case 1:
                         searchByName(students)
                     case 2:
-<<<<<<< HEAD
-                        print("Recherche par ville - Fonctionnalité à implémenter")
-                        pause()
-                    case 3:
-                        print("Recherche par filière - Fonctionnalité à implémenter")
-                        pause()
-                    case 4:
-                        break
-            pause()
-=======
                         searchByVille(students)
                     case 3:
                         searchByFiliere(students)
-                    case _:
-                        print("Option de recherche invalide.")
-                                    
->>>>>>> main
+                    case 4:
+                        break
+            pause()
         case 4:
-            print("Ajouter une note")
+            addGrade(students)
             pause()
         case 5:
             print("Afficher les statistiques")
             pause()
         case 6:
-            print("Exporter vers CSV")
+            exportToCSV(students)
             pause()
         case 7:
-            print("Supprimer un étudiant")
+            deleteStudent(students) 
             pause()
         case 8:
-            print("Modifier un étudiant")
+            updateStudent(students)
             pause()
         case 9:
             print("Quitter")

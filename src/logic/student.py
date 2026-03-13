@@ -130,6 +130,36 @@ def deleteStudent(STUDENTS):
 
 
 
+def addGrade(STUDENTS):
+    clearScreen()
+
+    print("=== AJOUTER UNE NOTE ===")
+    print()
+
+    student = searchById(STUDENTS)
+    if student is None:
+        print("Etudiant non trouve.")
+        pause()
+        return
+
+    while True:
+        grade = get_validated_input("Note (0 pour arreter): ", validate_grade)
+        if grade == 0:
+            break
+        student['notes'].append(grade)
+
+    success = save_students_to_json(STUDENTS)
+    if success:
+        print(f"\nNote ajoutee avec succes a l'etudiant {student['name']}.")
+    else:
+        print(f"\nErreur lors de l'ajout de la note a l'etudiant {student['name']}.")
+
+    pause()
+
+
+
+
+
 def exportToCSV(STUDENTS):
     clearScreen()
 
