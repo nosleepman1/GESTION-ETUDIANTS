@@ -1,7 +1,7 @@
 from ..utils.utils import clearScreen, pause
 from .id import generate_id
 from ..middlewares.validation import get_validated_input, validate_name, validate_age, validate_ville, validate_filiere
-from ..middlewares.file_operations import save_students_to_json
+from ..middlewares.file_operations import save_students_to_json, save_students_to_csv, load_students_from_csv
 
 
 def createStudent(STUDENTS):
@@ -127,3 +127,37 @@ def deleteStudent(STUDENTS):
         print(f"\nErreur lors de la suppression de l'etudiant {student['name']}.")
 
     pause()
+
+
+
+def exportToCSV(STUDENTS):
+    clearScreen()
+
+    print("=== EXPORTER LES ETUDIANTS VERS CSV ===")
+    print()
+
+    success = save_students_to_csv(STUDENTS)
+    if success:
+        print(f"\nEtudiants exportes avec succes vers CSV!")
+    else:
+        print(f"\nErreur lors de l'exportation des etudiants vers CSV.")
+
+    pause()
+
+
+
+def importFromCSV(STUDENTS):
+    clearScreen()
+
+    print("=== IMPORTER LES ETUDIANTS DEPUIS CSV ===")
+    print()
+
+    success = load_students_from_csv(STUDENTS)
+    if success:
+        print(f"\nEtudiants importes avec succes depuis CSV!")
+    else:
+        print(f"\nErreur lors de l'importation des etudiants depuis CSV.")
+
+    pause()
+
+
