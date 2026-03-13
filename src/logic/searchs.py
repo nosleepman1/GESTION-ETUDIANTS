@@ -1,4 +1,4 @@
-from .student import displayStudent
+from .display import displayStudent
 
 
 def searchByName(STUDENTS):
@@ -37,3 +37,10 @@ def searchByFiliere(STUDENTS):
             displayStudent(student)
     else:
         print(f"Aucun etudiant trouve dans la filiere '{filiere}'.")
+
+
+def searchById(STUDENTS):
+    student_id = input("Entrez l'ID de l'etudiant a rechercher: ")
+    RESULT = [student for student in STUDENTS if student['id'] == student_id]
+    
+    return RESULT
