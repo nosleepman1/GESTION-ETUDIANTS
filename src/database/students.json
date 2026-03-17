@@ -5,7 +5,7 @@
     "age": 20,
     "ville": "Paris",
     "filiere": "Info",
-    "notes": []
+    "notes": [14, 15, 16]
   },
   {
     "id": 2,

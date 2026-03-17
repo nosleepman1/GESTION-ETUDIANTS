@@ -1,8 +1,9 @@
 from ..utils.utils import clearScreen, pause
 from .id import generate_id
-from ..middlewares.validation import get_validated_input, validate_name, validate_age, validate_ville, validate_filiere
+from ..middlewares.validation import get_validated_input, validate_name, validate_age, validate_ville, validate_filiere, validate_grade
 from ..middlewares.file_operations import save_students_to_json, save_students_to_csv, load_students_from_csv
 
+from .searchs import searchById
 
 def createStudent(STUDENTS):
     clearScreen()
@@ -113,6 +114,7 @@ def deleteStudent(STUDENTS):
     print()
 
     student = searchById(STUDENTS)
+    
     if student is None:
         print("Etudiant non trouve.")
         pause()
@@ -146,7 +148,8 @@ def addGrade(STUDENTS):
         grade = get_validated_input("Note (0 pour arreter): ", validate_grade)
         if grade == 0:
             break
-        student['notes'].append(grade)
+        
+        student[5].append(grade)
 
     success = save_students_to_json(STUDENTS)
     if success:

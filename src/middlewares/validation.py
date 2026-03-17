@@ -14,8 +14,6 @@ def validate_name(name):
         return False, "Erreur de validation du nom"
 
 
-
-
 def validate_age(age_str):
     try:
         age = int(age_str)
@@ -27,9 +25,6 @@ def validate_age(age_str):
     
     except ValueError:
         return False, "L'âge doit être un nombre entier"
-
-
-
 
 
 def validate_ville(ville):
@@ -49,7 +44,6 @@ def validate_ville(ville):
         return False, "Erreur de validation de la ville"
 
 
-
 def validate_filiere(filiere):
     
     try:
@@ -64,7 +58,19 @@ def validate_filiere(filiere):
         return True, filiere
     except:
         return False, "Erreur de validation de la filière"
+    
 
+def validate_grade(grade):
+    try:
+        grade_value = int(grade)
+        
+        if grade_value < 0 or grade_value > 20:
+            return False, "La note doit être entre 0 et 20"
+        
+        return True, grade_value
+    
+    except ValueError:
+        return False, "La note doit être un nombre valide"
 
 
 def get_validated_input(text, validator):
@@ -78,3 +84,5 @@ def get_validated_input(text, validator):
             return result
         else:
             print(f"Erreur: {result}")
+            
+

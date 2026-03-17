@@ -1,14 +1,16 @@
-from logic.searchs import searchByName
+from src.logic.searchs import searchByName
 from src.views.Home import home
 from src.views.Searchs import SearchView
 from src.utils.utils import clearScreen, pause
-from src.logic.student import createStudent 
+from src.logic.student import createStudent, addGrade, exportToCSV, editStudent, deleteStudent, importFromCSV
 from src.logic.display import displayAllStudents
 from src.logic.searchs import searchByName, searchByVille, searchByFiliere
 
 
+
+
 from src.middlewares.file_operations import load_students_from_json
-from views.Searchs import SearchView
+from src.views.Searchs import SearchView
 
 
 
@@ -49,7 +51,7 @@ while True:
             deleteStudent(students) 
             pause()
         case 8:
-            updateStudent(students)
+            editStudent(students)
             pause()
         case 9:
             print("Quitter")

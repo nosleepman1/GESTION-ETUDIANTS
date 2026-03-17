@@ -1,4 +1,5 @@
 from .display import displayStudent
+from src.utils.utils import clearScreen, pause
 
 
 def searchByName(STUDENTS):
@@ -11,6 +12,7 @@ def searchByName(STUDENTS):
             displayStudent(student)
     else:
         print(f"Aucun etudiant trouve avec le nom '{name}'.")
+    pause()
         
         
         
@@ -24,6 +26,7 @@ def searchByVille(STUDENTS):
             displayStudent(student)
     else:
         print(f"Aucun etudiant trouve dans la ville '{ville}'.")
+    pause()
 
 
 
@@ -37,10 +40,11 @@ def searchByFiliere(STUDENTS):
             displayStudent(student)
     else:
         print(f"Aucun etudiant trouve dans la filiere '{filiere}'.")
+    pause()
 
 
 def searchById(STUDENTS):
-    student_id = input("Entrez l'ID de l'etudiant a rechercher: ")
+    student_id = int(input("Entrez l'ID de l'etudiant a rechercher: "))
     RESULT = [student for student in STUDENTS if student['id'] == student_id]
     
     return RESULT
